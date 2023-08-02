@@ -35,5 +35,5 @@ console.log(c(xyz));
 //Arrow Functions
 
 const t = () =>{
-    
+
 }
