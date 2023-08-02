@@ -1,5 +1,6 @@
 const radiuses = [2,3,4,5,67,8,1];
 
+
 const area = function(radius) {
     return Math.PI *radius*radius;
 }
@@ -11,6 +12,7 @@ const circumference = function(radius){
 const diameter = function(radius){
     return 2*radius;
 }
+
 const calculate = function(radiuses, logic){
     const output =[];
     for(let i=0;i<radiuses.length;i++){
