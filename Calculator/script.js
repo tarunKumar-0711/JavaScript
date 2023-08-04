@@ -22,6 +22,18 @@ var result="";
             input.value = result;
            // console.log(result, "Hii DEL");
         }
+        else if(e.target.innerHTML == '+' || e.target.innerHTML == '-' || e.target.innerHTML == '*' || e.target.innerHTML == '/' || e.target.innerHTML == '%'){
+          
+          if(result[result.length-1] =='+' || result[result.length-1] =='-' || result[result.length-1] =='*' || result[result.length-1] =='/' || result[result.length-1] =='%'){
+            result = result.slice(0,result.length-1)+e.target.innerHTML;
+            input.value=result;
+          }
+          else{
+            result += e.target.innerHTML;
+            input.value = result; 
+          }
+          //console.log(result);
+        }
         else{
            // console.log(result);
             result += e.target.innerHTML;
