@@ -1,17 +1,17 @@
+// console.log("js Loaded");
 const apiKey = "ef9ad9dbbcb645dd26afcbbd6870a71d";
 const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric"
 const cityName = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 
 async function checkWeather(){
-    const response = await fetch(apiurl + `&appid=${apiKey}` + `&q=${cityName.value}`)
-    var data = await response.json();
-    console.log(data);
+    const response = await fetch(`${apiurl}&appid=${apiKey}&q=${cityName.value}`)
+    let data = await response.json();
 
-    document.querySelector('city').innerHTML = data.name;
+    document.querySelector('.city').innerHTML = data.name;
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector(".humidity").innerHTML = data.main.humidity +"%";
-    document.querySelector(".wind").innerHTML = data.main.speed +"km/h";
+    document.querySelector(".wind").innerHTML = data.wind.speed +"km/h";
 
     if(data.weather[0].main == 'Clear'){
         document.querySelector(".weather-icon").src = "images/clear.png";
@@ -32,7 +32,7 @@ async function checkWeather(){
         document.querySelector(".weather-icon").src = "images/snow.png";
     }
 
-    document.querySelector(".weather").style.display = block;
+    document.querySelector(".weather").style.display = "block";
 }
 
 
@@ -40,4 +40,5 @@ async function checkWeather(){
 
 searchBtn.addEventListener( "click", () => {
     checkWeather();
+    // console.log("Hii");
 })
